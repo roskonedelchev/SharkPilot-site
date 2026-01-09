@@ -16,12 +16,12 @@
 
 ## Употреба
 ```bat
-tools\import_doc.bat 1 "C:\Docs\Manual.html"
+tools\import_doc.bat 1 "C:\Docs\SHARK_PILOT.html"
 ```
 
 Ако папката със снимки е с друго име:
 ```bat
-tools\import_doc.bat 1 "C:\Docs\Manual.html" "C:\Docs\Manual_files"
+tools\import_doc.bat 1 "C:\Docs\SHARK_PILOT.html" "C:\Docs\images"
 ```
 
 ## Настройки
