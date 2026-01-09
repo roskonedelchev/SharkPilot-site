@@ -1,6 +1,4 @@
-# SharkPilot-site
-SharkPilot WEB site
-shark-site/
+SharkPilot-site/
   public/
     index.html
     doc-1/
@@ -10,3 +8,6 @@ shark-site/
     doc-3/
     doc-4/
     doc-5/
+  tools/          (по желание – скриптове за конвертиране)
+  README.md
+
