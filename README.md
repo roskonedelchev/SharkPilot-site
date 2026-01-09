@@ -8,6 +8,6 @@ SharkPilot-site/
     doc-3/
     doc-4/
     doc-5/
-  tools/          (по желание – скриптове за конвертиране)
+  tools/
   README.md
 
