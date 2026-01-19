@@ -8,168 +8,165 @@
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 
-<body>
-  <!-- Top bar -->
-  <header class="topbar">
-    <a class="brand" href="/">
-      <img class="brand__logo" src="/assets/logo.png" alt="SharkPilot" onerror="this.style.display='none'">
-      <span class="brand__text">SharkPilot</span>
-    </a>
+<body id="top">
+  <div class="layout">
 
-    <nav class="topnav" id="topnav">
-      <a href="#docs">Документи</a>
-      <a href="#videos">Видеа</a>
-      <a href="#contact">Контакт</a>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" style="--hero-bg: url('/assets/hero-bg.jpg')">
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1>SHARK PILOT</h1>
-      <p>Документация, инструкции и полезни видеа. Всичко на едно място.</p>
-
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#docs">Отвори документите</a>
-        <a class="btn btn--ghost" href="#videos">Гледай видеата</a>
-      </div>
-
-      <div class="hero__chips">
-        <span class="chip">Бърз достъп</span>
-        <span class="chip">Мобилен изглед</span>
-        <span class="chip">Лесно обновяване</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main -->
-  <main class="container">
-
-    <!-- Docs -->
-    <section id="docs" class="section">
-      <div class="section__head">
-        <h2>Документи</h2>
-
-        <div class="search">
-          <input id="docSearch" type="text" placeholder="Търси (пример: батерия, GPS, OLED…)" />
-          <span class="search__hint">Enter не трябва — филтрира в движение</span>
+    <aside class="sidebar" id="sidebar">
+      <a class="sidebrand" href="/">
+        <img src="/assets/logo.png" alt="SharkPilot logo" />
+        <div>
+          <strong>SharkPilot</strong>
+          <span>Документи и видеа</span>
         </div>
+      </a>
+
+      <div class="navgroup">
+        <div class="navtitle">Навигация</div>
+        <a class="sidelink" href="#docs">📄 <div>Документи</div></a>
+        <a class="sidelink" href="#videos">▶ <div>Видеа</div></a>
+        <a class="sidelink" href="#contact">✉ <div>Контакт</div></a>
       </div>
 
-      <div class="grid" id="docGrid">
-        <!-- Card 1 -->
-        <a class="card" href="/doc-1/" data-title="Документ 1 Инструкция">
-          <div class="card__img">
-            <img src="/assets/doc1.png" alt="Документ 1" loading="lazy">
-          </div>
-          <div class="card__body">
-            <h3>Документ 1</h3>
-            <p>Инструкция / основни функции</p>
-          </div>
-        </a>
-
-        <!-- Card 2 -->
-        <a class="card" href="/doc-2/" data-title="Документ 2 Настройки">
-          <div class="card__img">
-            <img src="/assets/doc2.png" alt="Документ 2" loading="lazy">
-          </div>
-          <div class="card__body">
-            <h3>Документ 2</h3>
-            <p>Настройки / менюта / параметри</p>
-          </div>
-        </a>
-
-        <!-- Card 3 -->
-        <a class="card" href="/doc-3/" data-title="Документ 3 Продукти">
-          <div class="card__img">
-            <img src="/assets/doc3.png" alt="Документ 3" loading="lazy">
-          </div>
-          <div class="card__body">
-            <h3>Документ 3</h3>
-            <p>Продукти и варианти</p>
-          </div>
-        </a>
-
-        <!-- Card 4 -->
-        <a class="card" href="/doc-4/" data-title="Документ 4 Свързване">
-          <div class="card__img">
-            <img src="/assets/doc4.png" alt="Документ 4" loading="lazy">
-          </div>
-          <div class="card__body">
-            <h3>Документ 4</h3>
-            <p>Свързване / монтаж / схеми</p>
-          </div>
-        </a>
-
-        <!-- Card 5 -->
-        <a class="card" href="/doc-5/" data-title="Документ 5 ЧЗВ">
-          <div class="card__img">
-            <img src="/assets/doc5.png" alt="Документ 5" loading="lazy">
-          </div>
-          <div class="card__body">
-            <h3>Документ 5</h3>
-            <p>ЧЗВ / диагностика / съвети</p>
-          </div>
-        </a>
+      <div class="navgroup">
+        <div class="navtitle">Бърз достъп</div>
+        <a class="sidelink" href="/doc-1/"><div>Документ 1</div><small>Продукти</small></a>
+        <a class="sidelink" href="/doc-2/"><div>Документ 2</div><small>Потребител</small></a>
+        <a class="sidelink" href="/doc-3/"><div>Документ 3</div><small>Монтаж</small></a>
+        <a class="sidelink" href="/doc-4/"><div>Документ 4</div><small>Кратко</small></a>
+        <a class="sidelink" href="/doc-5/"><div>Документ 5</div><small>Други</small></a>
       </div>
-    </section>
+    </aside>
 
-    <!-- Videos -->
-    <section id="videos" class="section">
-      <div class="section__head">
-        <h2>YouTube видеа</h2>
-        <p class="muted">Кликни върху видео, за да се отвори в прозорец (по-бързо и без тежки embed-и).</p>
-      </div>
+    <div class="main">
+      <header class="topbar">
+        <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">☰</button>
+        <div class="actions">
+          <a class="pill" href="#docs">📄 Документи</a>
+          <a class="pill" href="#videos">▶ Видеа</a>
+          <a class="pill" href="#contact">✉ Контакт</a>
+          <button class="pill" id="copyLink" type="button">🔗 Copy link</button>
+        </div>
+      </header>
 
-      <div class="videoGrid">
-        <!-- Replace VIDEO_IDs with yours -->
-        <button class="videoCard" data-video-id="VIDEO_ID_1" type="button">
-          <div class="videoCard__thumb">
-            <img src="https://i.ytimg.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="Видео 1" loading="lazy" referrerpolicy="no-referrer">
-            <span class="videoCard__play">▶</span>
+      <section class="hero" style="--hero-bg: url('/assets/hero-bg.png')">
+        <div class="hero__inner">
+          <h1>SHARK PILOT</h1>
+          <p>Актуални инструкции и полезни видеа. Обновяваш съдържанието като качиш новия HTML в doc-папката — Cloudflare го публикува автоматично.</p>
+          <div class="hero__row">
+            <a class="btn btn--primary" href="#docs">Отвори документите</a>
+            <a class="btn btn--ghost" href="#videos">Гледай видеата</a>
           </div>
-          <div class="videoCard__meta">
-            <strong>Видео 1</strong>
-            <span>Кратко описание</span>
+        </div>
+      </section>
+
+      <main class="container">
+
+        <section id="docs" class="section">
+          <div class="section__head">
+            <h2>Документи</h2>
+            <div class="search">
+              <input id="docSearch" type="text" placeholder="Търси (пример: батерия, GPS, OLED…)" />
+              <span class="search__hint">Филтрира картите на документите</span>
+            </div>
           </div>
-        </button>
 
-        <button class="videoCard" data-video-id="VIDEO_ID_2" type="button">
-          <div class="videoCard__thumb">
-            <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="Видео 2" loading="lazy" referrerpolicy="no-referrer">
-            <span class="videoCard__play">▶</span>
+          <div class="docsGrid" id="docGrid">
+            <a class="docCard" href="/doc-1/" data-title="Продукти от гамата на Shark Pilot">
+              <div class="docCard__img"><img src="/assets/doc-thumb.png" alt="Документ 1" loading="lazy"></div>
+              <div class="docCard__body">
+                <h3>Продукти от гамата на Shark Pilot</h3>
+                <p>Каталог, варианти, комплекти</p>
+              </div>
+            </a>
+
+            <a class="docCard" href="/doc-2/" data-title="Инструкция за потребителя">
+              <div class="docCard__img"><img src="/assets/doc-thumb.png" alt="Документ 2" loading="lazy"></div>
+              <div class="docCard__body">
+                <h3>Инструкция за потребителя</h3>
+                <p>Основни функции и работа</p>
+              </div>
+            </a>
+
+            <a class="docCard" href="/doc-3/" data-title="Инструкция за монтаж и настройки">
+              <div class="docCard__img"><img src="/assets/doc-thumb.png" alt="Документ 3" loading="lazy"></div>
+              <div class="docCard__body">
+                <h3>Инструкция за монтаж и настройки</h3>
+                <p>Свързване, монтаж, конфигурация</p>
+              </div>
+            </a>
+
+            <a class="docCard" href="/doc-4/" data-title="Кратка инструкция">
+              <div class="docCard__img"><img src="/assets/doc-thumb.png" alt="Документ 4" loading="lazy"></div>
+              <div class="docCard__body">
+                <h3>Кратка инструкция</h3>
+                <p>Най-важното в 1 страница</p>
+              </div>
+            </a>
+
+            <a class="docCard" href="/doc-5/" data-title="Други">
+              <div class="docCard__img"><img src="/assets/doc-thumb.png" alt="Документ 5" loading="lazy"></div>
+              <div class="docCard__body">
+                <h3>Други</h3>
+                <p>Допълнителна информация</p>
+              </div>
+            </a>
           </div>
-          <div class="videoCard__meta">
-            <strong>Видео 2</strong>
-            <span>Кратко описание</span>
+        </section>
+
+        <section id="videos" class="section">
+          <div class="section__head">
+            <h2>YouTube видеа</h2>
+            <p class="muted">Смени VIDEO_ID_1 / VIDEO_ID_2 с истински YouTube ID-та от линка (след v=).</p>
           </div>
-        </button>
-      </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="section__head">
-        <h2>Контакт</h2>
-        <p class="muted">Добави тук линкове към Facebook група, YouTube канал, имейл, магазин и т.н.</p>
-      </div>
+          <div class="videoGrid">
+            <button class="videoCard" data-video-id="VIDEO_ID_1" type="button">
+              <div class="videoCard__thumb">
+                <img src="https://i.ytimg.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="Видео 1" loading="lazy" referrerpolicy="no-referrer">
+                <span class="videoCard__play">▶</span>
+              </div>
+              <div class="videoCard__meta">
+                <strong>Видео 1</strong>
+                <span>Кратко описание</span>
+              </div>
+            </button>
 
-      <div class="ctaRow">
-        <a class="btn btn--primary" href="mailto:you@example.com">Email</a>
-        <a class="btn btn--ghost" href="#" onclick="alert('Сложи линк към Facebook/YouTube/магазин тук 🙂'); return false;">Линк</a>
-      </div>
-    </section>
-  </main>
+            <button class="videoCard" data-video-id="VIDEO_ID_2" type="button">
+              <div class="videoCard__thumb">
+                <img src="https://i.ytimg.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="Видео 2" loading="lazy" referrerpolicy="no-referrer">
+                <span class="videoCard__play">▶</span>
+              </div>
+              <div class="videoCard__meta">
+                <strong>Видео 2</strong>
+                <span>Кратко описание</span>
+              </div>
+            </button>
+          </div>
+        </section>
 
-  <footer class="footer">
-    <span>© <span id="year"></span> SharkPilot</span>
-    <a href="#top" class="footer__top" id="toTop">↑ Нагоре</a>
-  </footer>
+        <section id="contact" class="section">
+          <div class="section__head">
+            <h2>Контакт</h2>
+            <p class="muted">Добави имейл/YouTube/Facebook/магазин.</p>
+          </div>
 
-  <!-- Video Modal -->
+          <div class="hero__row">
+            <a class="btn btn--primary" href="mailto:you@example.com">Email</a>
+            <a class="btn btn--ghost" href="#top" id="toTop">Нагоре</a>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> SharkPilot</span>
+        <a href="#top">↑ Нагоре</a>
+      </footer>
+    </div>
+  </div>
+
+  <button class="fab" id="fabTop" title="Нагоре">↑</button>
+
   <div class="modal" id="videoModal" aria-hidden="true">
     <div class="modal__backdrop" id="modalBackdrop"></div>
     <div class="modal__panel" role="dialog" aria-modal="true" aria-label="YouTube video">
@@ -179,20 +176,22 @@
   </div>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu
+    // Mobile sidebar
     const burger = document.getElementById('burger');
-    const topnav = document.getElementById('topnav');
+    const sidebar = document.getElementById('sidebar');
     burger?.addEventListener('click', () => {
-      const isOpen = topnav.classList.toggle('topnav--open');
-      burger.setAttribute('aria-expanded', String(isOpen));
+      const open = sidebar.classList.toggle('sidebar--open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    document.querySelectorAll('.sidebar a').forEach(a => {
+      a.addEventListener('click', () => sidebar.classList.remove('sidebar--open'));
     });
 
-    // Docs search filter
+    // Search docs
     const docSearch = document.getElementById('docSearch');
-    const docCards = Array.from(document.querySelectorAll('#docGrid .card'));
+    const docCards = Array.from(document.querySelectorAll('#docGrid .docCard'));
     docSearch?.addEventListener('input', () => {
       const q = docSearch.value.trim().toLowerCase();
       docCards.forEach(card => {
@@ -201,17 +200,28 @@
       });
     });
 
-    // Video modal (lazy iframe)
+    // Copy link
+    document.getElementById('copyLink')?.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(location.href);
+        alert('Линкът е копиран ✅');
+      }catch(e){
+        alert('Не успях да копирам. Копирай ръчно от адрес бара 🙂');
+      }
+    });
+
+    // Video modal
     const modal = document.getElementById('videoModal');
     const modalFrame = document.getElementById('modalFrame');
     const closeBtn = document.getElementById('modalClose');
     const backdrop = document.getElementById('modalBackdrop');
 
     function openVideo(videoId) {
-      if (!modal || !modalFrame) return;
-      modal.setAttribute('aria-hidden', 'false');
+      if (!videoId || videoId.startsWith('VIDEO_ID')) {
+        alert('Смени VIDEO_ID_1 / VIDEO_ID_2 с истински YouTube ID (пример: AbCdEf12345).');
+        return;
+      }
       modal.classList.add('modal--open');
-
       const iframe = document.createElement('iframe');
       iframe.width = "100%";
       iframe.height = "100%";
@@ -220,35 +230,26 @@
       iframe.referrerPolicy = "no-referrer";
       iframe.loading = "lazy";
       iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
-
       modalFrame.innerHTML = "";
       modalFrame.appendChild(iframe);
     }
-
     function closeVideo() {
-      if (!modal || !modalFrame) return;
       modal.classList.remove('modal--open');
-      modal.setAttribute('aria-hidden', 'true');
-      modalFrame.innerHTML = ""; // stop playback
+      modalFrame.innerHTML = "";
     }
 
     document.querySelectorAll('.videoCard').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-video-id');
-        if (id) openVideo(id);
-      });
+      btn.addEventListener('click', () => openVideo(btn.getAttribute('data-video-id')));
     });
-
     closeBtn?.addEventListener('click', closeVideo);
     backdrop?.addEventListener('click', closeVideo);
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeVideo();
-    });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
 
-    // Back to top
+    // Floating top button
+    const fab = document.getElementById('fabTop');
+    fab?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
     document.getElementById('toTop')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});
     });
   </script>
 </body>
