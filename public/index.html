@@ -120,7 +120,7 @@
           </div>
 
           <div class="videoGrid">
-            <button class="videoCard" data-video-id=RwFWrQBFHtc type="button">
+            <button class="videoCard" data-video-id="RwFWrQBFHtc" type="button">
               <div class="videoCard__thumb">
                 <img src="https://i.ytimg.com/vi/RwFWrQBFHtc/hqdefault.jpg" alt="Видео 1" loading="lazy" referrerpolicy="no-referrer">
                 <span class="videoCard__play">▶</span>
@@ -131,7 +131,7 @@
               </div>
             </button>
 
-            <button class="videoCard" data-video-id=YZ7unQbcLRA type="button">
+            <button class="videoCard" data-video-id="YZ7unQbcLRA" type="button">
               <div class="videoCard__thumb">
                 <img src="https://i.ytimg.com/vi/YZ7unQbcLRA/hqdefault.jpg" alt="Видео 2" loading="lazy" referrerpolicy="no-referrer">
                 <span class="videoCard__play">▶</span>
@@ -216,12 +216,17 @@
     const closeBtn = document.getElementById('modalClose');
     const backdrop = document.getElementById('modalBackdrop');
 
-    function openVideo(videoId) {
+    function openVideo(videoIdRaw) {
+      const videoId = (videoIdRaw || "").trim();
       if (!videoId || videoId.startsWith('VIDEO_ID')) {
         alert('Смени VIDEO_ID_1 / VIDEO_ID_2 с истински YouTube ID (пример: AbCdEf12345).');
         return;
       }
+
       modal.classList.add('modal--open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
       const iframe = document.createElement('iframe');
       iframe.width = "100%";
       iframe.height = "100%";
@@ -229,23 +234,26 @@
       iframe.allowFullscreen = true;
       iframe.referrerPolicy = "no-referrer";
       iframe.loading = "lazy";
-      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+
       modalFrame.innerHTML = "";
       modalFrame.appendChild(iframe);
     }
+
     function closeVideo() {
       modal.classList.remove('modal--open');
+      modal.setAttribute('aria-hidden', 'true');
       modalFrame.innerHTML = "";
+      document.body.style.overflow = '';
     }
 
     document.querySelectorAll('.videoCard').forEach(btn => {
-      btn.addEventListener('click', () => openVideo(btn.getAttribute('data-video-id')));
+      btn.addEventListener('click', () => openVideo(btn.dataset.videoId));
     });
     closeBtn?.addEventListener('click', closeVideo);
     backdrop?.addEventListener('click', closeVideo);
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
-
-    // Floating top button
+// Floating top button
     const fab = document.getElementById('fabTop');
     fab?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
     document.getElementById('toTop')?.addEventListener('click', (e) => {
