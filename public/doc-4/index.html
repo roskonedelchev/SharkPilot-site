@@ -2,135 +2,22 @@
 <html lang="bg">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Документ 4 · Кратка инструкция (PDF)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Документ 4</title>
   <style>
-    :root{
-      --bg:#0b0e14;
-      --panel:#141a24;
-      --text:#e8eefc;
-      --muted:#9aa7c7;
-      --border:rgba(255,255,255,.12);
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius:18px;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      min-height:100svh;
-      background: radial-gradient(1200px 700px at 20% 0%, rgba(255,165,0,.10), transparent 60%),
-                  radial-gradient(1200px 700px at 80% 10%, rgba(80,140,255,.10), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 20px;
-    }
-    .wrap{
-      width: min(1200px, 96vw);
-    }
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:12px;
-    }
-    .title{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      min-width:0;
-    }
-    .title strong{
-      font-size: 18px;
-      line-height: 1.2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .title span{
-      font-size: 13px;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    a.btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border:1px solid var(--border);
-      color: var(--text);
-      text-decoration:none;
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 22px rgba(0,0,0,.25);
-      font-size: 14px;
-      line-height: 1;
-    }
-    a.btn:hover{ background: rgba(255,255,255,.10); }
-    .panel{
-      width: 100%;
-      height: min(84svh, 900px);
-      background: var(--panel);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-    }
+    html,body{height:100%;margin:0}
+    body{background:#0b0b0c;display:flex;align-items:center;justify-content:center}
     iframe{
-      width:100%;
-      height:100%;
+      width:min(1100px, 96vw);
+      height:96vh;
       border:0;
-      display:block;
-      background: #111;
+      border-radius:14px;
+      background:#111;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
     }
-    .hint{
-      margin-top:10px;
-      font-size: 13px;
-      color: var(--muted);
-      text-align:center;
-    }
-    code{ color:#ffd59a; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="title">
-        <strong>Документ 4 · Кратка инструкция (PDF)</strong>
-        <span>Ако браузърът се дърпа — ползвай бутона „Отвори PDF“ (YouTube не е виновен този път 😄)</span>
-      </div>
-      <div class="actions">
-        <a class="btn" href="../">← Начало</a>
-        <a class="btn" href="./short-instruction.pdf" target="_blank" rel="noopener">Отвори PDF ↗</a>
-      </div>
-    </div>
-
-    <div class="panel" role="region" aria-label="PDF viewer">
-      <!-- Native browser PDF viewer -->
-      <iframe
-        src="./short-instruction.pdf#view=FitH"
-        title="Кратка инструкция (PDF)"
-        loading="lazy"
-      ></iframe>
-    </div>
-
-    <div class="hint">
-      Файлът трябва да е в тази папка като <code>public/doc-4/short-instruction.pdf</code>.
-      (Ако го оставиш с кирилица/интервали, понякога трябва URL-енкодинг — затова е по-сигурно да е с латиница.)
-    </div>
-  </div>
+  <iframe src="./short-instruction.pdf#view=FitH" title="Документ 4"></iframe>
 </body>
 </html>
